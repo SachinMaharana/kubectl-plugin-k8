@@ -1,16 +1,16 @@
-package capacity
+package nodepodlist
 
 import (
 	"fmt"
 	"os"
 
-	"github.com/sachin/kubectl-plugin-k8/pkg/kube"
+	"github.com/sachin/kubectl-plugin-k8/pkg/kubeconf"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 // List ...
-func List(args []string, showPods bool) {
+func List(args []string, showNodePods bool) {
 	podList, nodeList := getPodsAndNodes()
 
 	for _, node := range nodeList.Items {
@@ -24,7 +24,7 @@ func List(args []string, showPods bool) {
 }
 
 func getPodsAndNodes() (*corev1.PodList, *corev1.NodeList) {
-	clientset, err := kube.NewClientSet()
+	clientset, err := kubeconf.NewClientSet()
 	if err != nil {
 		fmt.Printf("Error connecting to Kubernetes: %v\n", err)
 		os.Exit(1)

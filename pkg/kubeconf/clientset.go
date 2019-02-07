@@ -1,4 +1,4 @@
-package kube
+package kubeconf
 
 import (
 	"fmt"

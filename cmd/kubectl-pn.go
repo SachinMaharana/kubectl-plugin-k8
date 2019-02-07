@@ -4,14 +4,14 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sachin/kubectl-plugin-k8/pkg/capacity"
+	"github.com/sachin/kubectl-plugin-k8/pkg/nodepodlist"
 	"github.com/spf13/cobra"
 )
 
-var showPods bool
+var showNodePods bool
 
 var rootCmd = &cobra.Command{
-	Use:   "kubectl-plugin",
+	Use:   "kubectl-pn",
 	Short: "test",
 	Long:  "test",
 	Args:  cobra.RangeArgs(0, 1),
@@ -19,21 +19,21 @@ var rootCmd = &cobra.Command{
 		if err := cmd.ParseFlags(args); err != nil {
 			fmt.Printf("Error parsing flags: %v", err)
 		}
-		capacity.List(args, showPods)
+		nodepodlist.List(args, showNodePods)
 	},
 }
 
 var versionCmd = &cobra.Command{
 	Use:   "version",
-	Short: "Print the version number of Hugo",
-	Long:  `Version`,
+	Short: "Print the version number of this plugin.",
+	Long:  `Version of kubectl-pn`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Hugo")
+		fmt.Println("v0.1.0")
 	},
 }
 
 func init() {
-	rootCmd.Flags().BoolVarP(&showPods, "pods", "p", false, "Set this flag to include pods in output")
+	rootCmd.Flags().BoolVarP(&showNodePods, "pods-node list", "p", false, "Set this flag to include pods-node in output")
 }
 
 //Execute ...

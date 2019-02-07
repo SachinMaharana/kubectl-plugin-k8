@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"github.com/sachin/kubectl-plugin/pkg/cmd"
+)
 
 func main() {
-	fmt.Println("Hello")
+	cmd.Execute()
 }

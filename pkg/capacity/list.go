@@ -14,11 +14,11 @@ func List(args []string, showPods bool) {
 	podList, nodeList := getPodsAndNodes()
 
 	for _, node := range nodeList.Items {
-		fmt.Println(node.Name)
+		fmt.Println("Node Name:", node.Name)
 	}
 
 	for _, pod := range podList.Items {
-		fmt.Println(pod.Name)
+		fmt.Println("Pod Name:", pod.Name)
 	}
 
 }

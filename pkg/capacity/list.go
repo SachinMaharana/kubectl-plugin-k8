@@ -12,7 +12,15 @@ import (
 // List ...
 func List(args []string, showPods bool) {
 	podList, nodeList := getPodsAndNodes()
-	fmt.Println(podList, nodeList)
+
+	for _, node := range nodeList.Items {
+		fmt.Println(node.Name)
+	}
+
+	for _, pod := range podList.Items {
+		fmt.Println(pod.Name)
+	}
+
 }
 
 func getPodsAndNodes() (*corev1.PodList, *corev1.NodeList) {

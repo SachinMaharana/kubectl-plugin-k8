@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sachin/kubectl-plugin/pkg/capacity"
+	"github.com/sachin/kubectl-plugin-k8/pkg/capacity"
 	"github.com/spf13/cobra"
 )
 

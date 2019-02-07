@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sachin/kubectl-plugin/pkg/kube"
+	"github.com/sachin/kubectl-plugin-k8/pkg/kube"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )

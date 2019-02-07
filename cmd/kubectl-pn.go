@@ -1,4 +1,4 @@
-package cmd
+package main
 
 import (
 	"fmt"
@@ -36,8 +36,7 @@ func init() {
 	rootCmd.Flags().BoolVarP(&showNodePods, "pods-node list", "p", false, "Set this flag to include pods-node in output")
 }
 
-//Execute ...
-func Execute() {
+func main() {
 	rootCmd.AddCommand(versionCmd)
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)

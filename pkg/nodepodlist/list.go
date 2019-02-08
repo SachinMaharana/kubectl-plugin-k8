@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sachin/kubectl-plugin-k8/pkg/kubeconf"
+	"github.com/SachinMaharana/kubectl-plugin-k8/pkg/kubeconf"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// List ...
+// List prints the collected pods and nodes on the cluster
 func List(args []string, showNodePods bool) {
 	podList, nodeList := getPodsAndNodes()
 
@@ -22,7 +22,7 @@ func List(args []string, showNodePods bool) {
 	}
 
 }
-
+// getPodsAndNodes interacts with the api to get the pods and nodes
 func getPodsAndNodes() (*corev1.PodList, *corev1.NodeList) {
 	clientset, err := kubeconf.NewClientSet()
 	if err != nil {

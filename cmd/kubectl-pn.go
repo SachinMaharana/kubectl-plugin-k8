@@ -6,7 +6,7 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/sachin/kubectl-plugin-k8/pkg/nodepodlist"
+	"github.com/SachinMaharana/kubectl-plugin-k8/pkg/nodepodlist"
 	"github.com/spf13/cobra"
 )
 

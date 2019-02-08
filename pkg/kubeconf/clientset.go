@@ -12,7 +12,7 @@ import (
 	_ "k8s.io/client-go/plugin/pkg/client/auth"
 )
 
-// NewClientSet ...
+// NewClientSet creates a client based on the current k8 context
 func NewClientSet() (*kubernetes.Clientset, error) {
 	config, err := getKubeConfig()
 	if err != nil {
